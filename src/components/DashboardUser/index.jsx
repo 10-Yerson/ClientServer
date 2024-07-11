@@ -2,7 +2,7 @@
 
 import Dashboard from "../Dashboard";
 import { useEffect, useState } from "react";
-import { getAllTasks, deleteTask } from '../../services/taskService'
+import { getAllTasks, deleteTask } from '../../services/Taks/taskService'
 import Link from "next/link";
 import './css.css'
 
@@ -27,8 +27,6 @@ export default function GetUser() {
     return (
         <>
             <Dashboard />
-
-
             <div className="p-4 sm:ml-64">
                 <Link href="/create">
                     <button className="btn">
@@ -75,9 +73,14 @@ export default function GetUser() {
                                 <td class="px-6 py-4">
                                     {task.taskType}
                                 </td>
-                                <td class="px-6 py-4">
-                                    <button onClick={() => handleDelete(task._id)} class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Eliminar</button>
-                                    <a href={`/edit/${task._id}`} class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                                <td class="px-6 py-4 flex flex-row justify-start content-center gap-3">
+                                    <Link href={`/edit/${task._id}`}>
+                                        <img className="w-7 object-contain "
+                                            src="\img\editar.png" alt="img" />
+                                    </Link>
+                                    <button onClick={() => handleDelete(task._id)} class="w-7 object-contain">
+                                        <img src="\img\eliminar.png" alt="img" />
+                                    </button>
                                 </td>
                             </tr>
                         ))}

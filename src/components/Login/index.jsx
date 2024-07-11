@@ -2,7 +2,7 @@ import './css.css'
 
 export default function Login() {
     return (
-        <div className='container'>
+        <div className='form-master'>
             <form class="form_main" action="">
                 <p class="heading">Login</p>
                 <div class="inputContainer">

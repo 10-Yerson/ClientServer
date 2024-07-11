@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createTask } from '../../services/taskService';
+import { createTask } from '../../services/Taks/taskService';
 
 const CreateTask = () => {
     const [title, setTitle] = useState('');
@@ -14,18 +14,17 @@ const CreateTask = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await createTask({ title, description, taskType  });
+            await createTask({ title, description, taskType });
             router.push('pages/users');
         } catch (error) {
             console.error('Error al crear la tarea:', error);
             setError('Error al crear la tarea. Inténtalo de nuevo.');
-            // Aquí puedes agregar lógica para mostrar un mensaje de error al usuario
         }
     };
 
     return (
 
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit}>
             <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
                 <div class="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
                     <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -64,13 +63,18 @@ const CreateTask = () => {
                         </div>
 
                         <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  focus:ring-blue-800 text-white">
-                            Create an account
+                            Create Taks
                         </button>
 
                     </div>
                 </div>
             </div>
         </form>
+
+
+
+
+
 
     );
 };

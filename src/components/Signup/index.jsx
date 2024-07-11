@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createUser } from '../../services/userService';
+import { createUser } from '../../services/User/userService';
 import './css.css'
 
 export default function Signup() {
@@ -25,7 +25,7 @@ export default function Signup() {
     };
 
     return (
-        <div className='container'>
+        <div className='form-register'>
             <form class="form_main" onSubmit={handleSubmit}>
                 <p class="heading">Registrarse</p>
                 <div class="inputContainer">
