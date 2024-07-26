@@ -2,6 +2,7 @@ import Image from "next/image";
 import Navbar from "../components/Loanding";
 import './css.css'
 import Link from "next/link";
+import Modal from "@/components/Modal";
 
 export default function Home() {
   return (
